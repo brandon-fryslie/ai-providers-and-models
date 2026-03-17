@@ -213,8 +213,19 @@ def _make_modalities() -> CommentedMap:
 
 def _make_endpoints() -> CommentedMap:
     return CommentedMap({
+        "assistants": False,
+        "batch": True,
         "chat_completions": True,
+        "completions_legacy": False,
+        "embeddings": False,
+        "fine_tuning": False,
+        "image_generation": False,
+        "moderation": False,
+        "realtime": False,
         "responses": True,
+        "speech_generation": False,
+        "transcription": False,
+        "translation": False,
     })
 
 
