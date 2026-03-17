@@ -1,4 +1,4 @@
-name: Update OpenAI Models
+name: Update Models
 
 on:
   schedule:
@@ -23,10 +23,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r scripts/requirements.txt
 
-      - name: Run model updater
+      - name: Update OpenAI models
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python scripts/update_openai_models.py
+
+      - name: Update Gemini models
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/update_gemini_models.py
+
+      - name: Update Anthropic models
+        run: python scripts/update_anthropic_models.py
 
       - name: Commit and push if changed
         run: |
@@ -34,7 +42,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add models.yaml
-          git commit -m "chore: update OpenAI models from API"
+          git commit -m "chore: update models from APIs"
           git push
 
       - name: Convert YAML to JSON
