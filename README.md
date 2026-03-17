@@ -55,4 +55,4 @@ A [GitHub Action](./.github/workflows/update-openai-models.yml) runs daily at 9a
 
 ## Credits
 
-Originally created by [dwmkerr](https://github.com/dwmkerr/ai-providers-and-models) as a manually maintained dataset. Forked and automated by [brandon-fryslie](https://github.com/brandon-fryslie).
+Originally created by [dwmkerr](https://github.com/dwmkerr/ai-providers-and-models). Forked and automated by [brandon-fryslie](https://github.com/brandon-fryslie).

@@ -36,6 +36,9 @@ jobs:
       - name: Update Anthropic models
         run: python scripts/update_anthropic_models.py
 
+      - name: Validate schema
+        run: python modules/validate-schema/validate.py models.yaml modules/models-schema.yaml
+
       - name: Commit and push if changed
         run: |
           git diff --quiet models.yaml && exit 0
