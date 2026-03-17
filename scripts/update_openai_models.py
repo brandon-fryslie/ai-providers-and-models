@@ -375,13 +375,13 @@ def build_model_entry(
         # Latest version (last in sorted-by-created list) is default
         ve["isDefault"] = v is versions[-1]
         ve["isDeprecated"] = False
+        ve["description"] = ""
         # Preserve existing version metadata
         if "versions" in ex:
             for ev in ex["versions"]:
                 if ev.get("id") == vid:
                     ve["isDeprecated"] = ev.get("isDeprecated", False)
-                    if ev.get("description"):
-                        ve["description"] = ev["description"]
+                    ve["description"] = ev.get("description", "")
                     break
         version_entries.append(ve)
 

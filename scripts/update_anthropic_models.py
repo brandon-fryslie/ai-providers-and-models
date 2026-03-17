@@ -276,6 +276,7 @@ def build_model_entry(
             ve["release_date"] = ""
         ve["isDefault"] = True
         ve["isDeprecated"] = False
+        ve["description"] = ""
         version_entries.append(ve)
 
     if version_entries:

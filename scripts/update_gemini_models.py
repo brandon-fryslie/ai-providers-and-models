@@ -264,13 +264,14 @@ def build_model_entry(
         ve["version"] = v.get("version", "")
         ve["isDefault"] = False
         ve["isDeprecated"] = False
+        ve["description"] = ""
+        ve["release_date"] = ""
         # Preserve existing version metadata
         if "versions" in ex:
             for ev in ex["versions"]:
                 if ev.get("id") == vid:
                     ve["isDeprecated"] = ev.get("isDeprecated", False)
-                    if ev.get("description"):
-                        ve["description"] = ev["description"]
+                    ve["description"] = ev.get("description", "")
                     break
         version_entries.append(ve)
 
