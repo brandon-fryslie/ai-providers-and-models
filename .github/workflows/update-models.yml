@@ -36,3 +36,38 @@ jobs:
           git add models.yaml
           git commit -m "chore: update OpenAI models from API"
           git push
+
+      - name: Convert YAML to JSON
+        run: python -c "
+          from ruamel.yaml import YAML
+          import json, pathlib
+          yml = YAML()
+          data = yml.load(pathlib.Path('models.yaml'))
+          def to_plain(obj):
+              if hasattr(obj, 'items'):
+                  return {str(k): to_plain(v) for k, v in obj.items()}
+              if isinstance(obj, list):
+                  return [to_plain(i) for i in obj]
+              return obj
+          pathlib.Path('_site').mkdir(exist_ok=True)
+          pathlib.Path('_site/models.json').write_text(json.dumps(to_plain(data), indent=2))
+          "
+
+      - name: Deploy to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy-pages:
+    needs: update-models
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
