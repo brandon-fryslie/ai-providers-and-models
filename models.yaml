@@ -1201,7 +1201,462 @@ providers:
     additional_endpoints: &ref_0
     - api_specification: api.openai.com/v1
       base_url: https://generativelanguage.googleapis.com/v1beta/openai/
-    models: &ref_1
+    models:
+      models/gemini-2.0-flash:
+        id: models/gemini-2.0-flash
+        name: Gemini 2.0 Flash
+        documentation_url: https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash
+        description_short: >-
+          Our newest multimodal model, with next generation features and
+          improved capabilities
+        description: >-
+          Gemini 2.0 Flash delivers next-gen features and improved capabilities,
+          including superior speed, native tool use, multimodal generation, and
+          a 1M token context window.
+        status: general-availability
+        knowledge_cutoff: August 2024
+        context_window: 1048576
+        max_output_tokens: 8192
+        validated: false
+        pricing:
+          input_per_million: 0.05
+          output_per_million: 0.2
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: models/gemini-2.0-flash-001
+          version: '2.0'
+          isDefault: false
+          isDeprecated: false
+      models/gemini-2.0-flash-lite:
+        id: models/gemini-2.0-flash-lite
+        name: Gemini 2.0 Flash-Lite
+        documentation_url: >-
+          https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash-lite
+        description_short: A Gemini 2.0 Flash model optimized for cost efficiency and low latency
+        description: >-
+          A Gemini 2.0 Flash model optimized for cost efficiency and low
+          latency.
+        status: general-availability
+        knowledge_cutoff: August 2024
+        context_window: 1048576
+        max_output_tokens: 8192
+        validated: false
+        pricing:
+          input_per_million: 0.05
+          output_per_million: 0.2
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: models/gemini-2.0-flash-lite-001
+          version: '2.0'
+          isDefault: false
+          isDeprecated: false
+      models/gemini-2.5-flash:
+        id: models/gemini-2.5-flash
+        name: Gemini 2.5 Flash
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash
+        description_short: Stable version of Gemini 2.5 Flash, our mid-size multimodal model that supports up to 1 million tokens, released in June
+        description: Stable version of Gemini 2.5 Flash, our mid-size multimodal model that supports up to 1 million tokens, released in June of 2025.
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0.15
+          output_per_million: 1.25
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-2.5-flash-lite:
+        id: models/gemini-2.5-flash-lite
+        name: Gemini 2.5 Flash-Lite
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-lite
+        description_short: Stable version of Gemini 2.5 Flash-Lite, released in July of 2025
+        description: Stable version of Gemini 2.5 Flash-Lite, released in July of 2025
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0.15
+          output_per_million: 1.25
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-2.5-pro:
+        id: models/gemini-2.5-pro
+        name: Gemini 2.5 Pro
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-2.5-pro
+        description_short: Stable release (June 17th, 2025) of Gemini 2.5 Pro
+        description: Stable release (June 17th, 2025) of Gemini 2.5 Pro
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0.625
+          output_per_million: 5.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-3-flash-preview:
+        id: models/gemini-3-flash-preview
+        name: Gemini 3 Flash Preview
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-3-flash-preview
+        description_short: Gemini 3 Flash Preview
+        description: Gemini 3 Flash Preview
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0.25
+          output_per_million: 1.5
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-3-pro-preview:
+        id: models/gemini-3-pro-preview
+        name: Gemini 3 Pro Preview
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-3-pro-preview
+        description_short: Gemini 3 Pro Preview
+        description: Gemini 3 Pro Preview
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0
+          output_per_million: 0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-3.1-flash-lite-preview:
+        id: models/gemini-3.1-flash-lite-preview
+        name: Gemini 3.1 Flash Lite Preview
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-3.1-flash-lite-preview
+        description_short: Gemini 3.1 Flash Lite Preview
+        description: Gemini 3.1 Flash Lite Preview
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0.125
+          output_per_million: 0.75
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-3.1-pro-preview:
+        id: models/gemini-3.1-pro-preview
+        name: Gemini 3.1 Pro Preview
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-3.1-pro-preview
+        description_short: Gemini 3.1 Pro Preview
+        description: Gemini 3.1 Pro Preview
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 1.0
+          output_per_million: 6.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-3.1-pro-preview-customtools:
+        id: models/gemini-3.1-pro-preview-customtools
+        name: Gemini 3.1 Pro Preview Custom Tools
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-3.1-pro-preview-customtools
+        description_short: Gemini 3.1 Pro Preview optimized for custom tool usage
+        description: Gemini 3.1 Pro Preview optimized for custom tool usage
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 1.0
+          output_per_million: 6.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-robotics-er-1.5-preview:
+        id: models/gemini-robotics-er-1.5-preview
+        name: Gemini Robotics-ER 1.5 Preview
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-robotics-er-1.5-preview
+        description_short: Gemini Robotics-ER 1.5 Preview
+        description: Gemini Robotics-ER 1.5 Preview
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0
+          output_per_million: 0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+  gemini_openai:
+    id: gemini_openai
+    name: Gemini (OpenAI Compatible)
+    docs: https://ai.google.dev/gemini-api/docs/openai
+    api_specification: api.openai.com/v1
+    base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    additional_endpoints: *ref_0
+    models:
       gemini-2.5-pro-preview-03-25:
         id: gemini-2.5-pro-preview-03-25
         name: Gemini 2.5 Flash Preview
@@ -1419,18 +1874,99 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-  gemini_openai:
-    id: gemini_openai
-    name: Gemini (OpenAI Compatible)
-    docs: https://ai.google.dev/gemini-api/docs/openai
-    api_specification: api.openai.com/v1
-    base_url: https://generativelanguage.googleapis.com/v1beta/openai/
-    additional_endpoints: *ref_0
-    models: *ref_1
   claude:
     id: claude
     name: Claude
     docs: https://docs.anthropic.com/en/docs/about-claude/models/all-models
     api_specification: api.anthropic.com/v1
     base_url: https://api.anthropic.com/v1/
-    models: {}
+    models:
+      claude-haiku-4-5:
+        id: claude-haiku-4-5
+        name: claude-haiku-4-5
+        documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
+        description_short: The fastest model with near-frontier intelligence
+        description: The fastest model with near-frontier intelligence
+        status: legacy
+        knowledge_cutoff: Feb 2025
+        context_window: 200000
+        max_output_tokens: 64000
+        validated: false
+        pricing:
+          input_per_million: 1.0
+          output_per_million: 5.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          chat_completions: true
+          responses: true
+        versions:
+        - id: claude-haiku-4-5-20251001
+          release_date: '2025-10-01'
+          isDefault: true
+          isDeprecated: false
+      claude-opus-4-6:
+        id: claude-opus-4-6
+        name: claude-opus-4-6
+        documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
+        description_short: The most intelligent model for building agents and coding
+        description: The most intelligent model for building agents and coding
+        status: general-availability
+        knowledge_cutoff: May 2025
+        context_window: 1000000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 5.0
+          output_per_million: 25.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          chat_completions: true
+          responses: true
+      claude-sonnet-4-6:
+        id: claude-sonnet-4-6
+        name: claude-sonnet-4-6
+        documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
+        description_short: The best combination of speed and intelligence
+        description: The best combination of speed and intelligence
+        status: general-availability
+        knowledge_cutoff: Aug 2025
+        context_window: 1000000
+        max_output_tokens: 64000
+        validated: false
+        pricing:
+          input_per_million: 3.0
+          output_per_million: 15.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          chat_completions: true
+          responses: true
