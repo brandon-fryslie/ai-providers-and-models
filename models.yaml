@@ -1,5 +1,5 @@
 version: 0.1.13 # x-release-please-version
-updated: 2025-03-26T00:00:00.000Z
+updated: 2025-03-26T00:00:00Z
 source: https://github.com/dwmkerr/ai-providers-and-models
 author: dwmkerr
 providers:
@@ -10,24 +10,157 @@ providers:
     api_specification: api.openai.com/v1
     base_url: https://api.openai.com/v1/
     models:
-      gpt-4.1:
-        id: gpt-4.1
-        name: GPT-4.1
-        documentation_url: https://platform.openai.com/docs/models/gpt-4.1
-        description_short: Flagship GPT model for complex tasks
-        description: Improved reasoning and problem-solving capabilities
+      gpt-3.5-turbo:
+        id: gpt-3.5-turbo
+        name: gpt-3.5-turbo
+        documentation_url: https://developers.openai.com/docs/models/gpt-3.5-turbo
+        description_short: ''
+        description: ''
         status: general-availability
-        knowledgeCutoff: January 01 2024
-        context_window: 1047576
-        max_output_tokens: 32768
+        knowledgeCutoff: Sep 01, 2021
+        context_window: 16385
+        max_output_tokens: 4096
         validated: false
         pricing:
-          input_per_million: 2
-          output_per_million: 8
+          input_per_million: 0.5
+          output_per_million: 1.5
         modalities:
           input:
             text: true
-            image: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-3.5-turbo-1106
+          release_date: ''
+          isDefault: false
+          isDeprecated: false
+        - id: gpt-3.5-turbo-0125
+          release_date: ''
+          isDefault: true
+          isDeprecated: false
+      gpt-3.5-turbo-16k:
+        id: gpt-3.5-turbo-16k
+        name: gpt-3.5-turbo-16k
+        documentation_url: https://developers.openai.com/docs/models/gpt-3.5-turbo-16k
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: ''
+        context_window: 0
+        max_output_tokens: 0
+        validated: false
+        pricing:
+          input_per_million: 0
+          output_per_million: 0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      gpt-3.5-turbo-instruct:
+        id: gpt-3.5-turbo-instruct
+        name: gpt-3.5-turbo-instruct
+        documentation_url: https://developers.openai.com/docs/models/gpt-3.5-turbo-instruct
+        description_short: ''
+        description: ''
+        status: deprecated
+        knowledgeCutoff: Sep 01, 2021
+        context_window: 4096
+        max_output_tokens: 4096
+        validated: false
+        pricing:
+          input_per_million: 1.5
+          output_per_million: 2.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-3.5-turbo-instruct-0914
+          release_date: ''
+          isDefault: true
+          isDeprecated: false
+      gpt-4:
+        id: gpt-4
+        name: GPT-4
+        documentation_url: https://developers.openai.com/docs/models/gpt-4
+        description_short: An older high-intelligence GPT model
+        description: >-
+          GPT-4 is an older version of a high-intelligence GPT model, usable in
+          Chat Completions.
+        status: general-availability
+        knowledgeCutoff: Dec 01, 2023
+        context_window: 8192
+        max_output_tokens: 8192
+        validated: true
+        pricing:
+          input_per_million: 30.0
+          output_per_million: 60.0
+        modalities:
+          input:
+            text: true
+            image: false
             audio: false
             video: false
           output:
@@ -50,96 +183,37 @@ providers:
           transcription: false
           translation: false
         versions:
-          - id: gpt-4.1-2025-04-14
-            release_date: "2025-04-15"
-            isDefault: true
-            isDeprecated: false
-            description: Initial release of GPT-4.1
-      gpt-4o:
-        id: gpt-4o
-        name: GPT-4o
-        documentation_url: https://platform.openai.com/docs/models/gpt-4o
-        description_short: Fast, intelligent, flexible GPT model
-        description: >-
-          GPT-4o ("o" for "omni") is our versatile, high-intelligence flagship
-          model. It accepts both text and image inputs, and produces text
-          outputs (including Structured Outputs). It is the best model for most
-          tasks, and is our most capable model outside of our o-series models.
-        status: general-availability
-        knowledgeCutoff: October 2023
+        - id: gpt-4-0613
+          release_date: ''
+          isDefault: false
+          isDeprecated: false
+          description: Current version of GPT-4, released June 2023
+        - id: gpt-4-1106-preview
+          release_date: ''
+          isDefault: false
+          isDeprecated: false
+        - id: gpt-4-0125-preview
+          release_date: ''
+          isDefault: true
+          isDeprecated: false
+      gpt-4-turbo:
+        id: gpt-4-turbo
+        name: gpt-4-turbo
+        documentation_url: https://developers.openai.com/docs/models/gpt-4-turbo
+        description_short: ''
+        description: ''
+        status: deprecated
+        knowledgeCutoff: Dec 01, 2023
         context_window: 128000
-        max_output_tokens: 16384
-        validated: true
-        pricing:
-          input_per_million: 2.5
-          output_per_million: 10
-        modalities:
-          input:
-            text: true
-            image: true
-            audio: false
-            video: true
-          output:
-            text: true
-            image: false
-            audio: false
-            video: false
-        endpoints:
-          assistants: true
-          batch: false
-          chat_completions: true
-          completions_legacy: false
-          embeddings: false
-          fine_tuning: true
-          image_generation: false
-          moderation: false
-          realtime: false
-          responses: true
-          speech_generation: false
-          transcription: false
-          translation: false
-        versions:
-          - id: gpt-4o-2024-08-06
-            release_date: "2024-08-06"
-            isDefault: true
-            isDeprecated: false
-            description: Current version of GPT-4o, released August 2024
-          - id: gpt-4o-2024-11-20
-            release_date: "2024-11-20"
-            isDefault: false
-            isDeprecated: false
-            description: Latest version of GPT-4o, released November 2024
-          - id: gpt-4o-2024-05-13
-            release_date: "2024-05-13"
-            isDefault: false
-            isDeprecated: true
-            description: Previous version of GPT-4o, released May 2024 and now deprecated
-      gpt-4.5-preview:
-        id: gpt-4.5-preview
-        name: GPT-4.5
-        documentation_url: https://platform.openai.com/docs/models/gpt-4.5-preview
-        description_short: >-
-          Enhanced GPT model with improved reasoning and conversational
-          abilities
-        description: >-
-          GPT-4.5 is the latest iteration in the GPT series, offering
-          significant improvements in reasoning, factual accuracy, and
-          multi-turn conversational capabilities over previous models. Building
-          on the advancements of GPT-4, it delivers faster performance and
-          refined outputs. Currently in preview, it provides a glimpse into the
-          future of AI-driven interactions.
-        status: preview
-        knowledgeCutoff: October 2023
-        context_window: 128000
-        max_output_tokens: 16384
+        max_output_tokens: 4096
         validated: false
         pricing:
-          input_per_million: 75
-          output_per_million: 150
+          input_per_million: 10.0
+          output_per_million: 30.0
         modalities:
           input:
             text: true
-            image: true
+            image: false
             audio: false
             video: false
           output:
@@ -149,11 +223,11 @@ providers:
             video: false
         endpoints:
           assistants: true
-          batch: false
+          batch: true
           chat_completions: true
           completions_legacy: false
           embeddings: false
-          fine_tuning: true
+          fine_tuning: false
           image_generation: false
           moderation: false
           realtime: false
@@ -162,29 +236,24 @@ providers:
           transcription: false
           translation: false
         versions:
-          - id: gpt-4.5-preview-2025-02-27
-            release_date: "2025-02-27"
-            isDefault: true
-            isDeprecated: false
-            description: Initial preview release of GPT-4.5
-      o3-mini:
-        id: o3-mini
-        name: o3-mini
-        documentation_url: https://platform.openai.com/docs/models/o3-mini
-        description_short: Fast, flexible, intelligent reasoning model
-        description: >-
-          o3-mini is our newest small reasoning model, providing high
-          intelligence at the same cost and latency targets of o1-mini. o3-mini
-          supports key developer features, like Structured Outputs, function
-          calling, and Batch API.
-        status: preview
-        validated: true
-        knowledgeCutoff: October 2023
-        context_window: 200000
-        max_output_tokens: 100000
+        - id: gpt-4-turbo-2024-04-09
+          release_date: '2024-04-09'
+          isDefault: true
+          isDeprecated: false
+      gpt-4-turbo-preview:
+        id: gpt-4-turbo-preview
+        name: gpt-4-turbo-preview
+        documentation_url: https://developers.openai.com/docs/models/gpt-4-turbo-preview
+        description_short: ''
+        description: ''
+        status: deprecated
+        knowledgeCutoff: Dec 01, 2023
+        context_window: 128000
+        max_output_tokens: 4096
+        validated: false
         pricing:
-          input_per_million: 1.1
-          output_per_million: 4.4
+          input_per_million: 10.0
+          output_per_million: 30.0
         modalities:
           input:
             text: true
@@ -210,34 +279,24 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-        versions:
-          - id: o3-mini-2025-01-31
-            release_date: "2025-01-31"
-            isDefault: true
-            isDeprecated: false
-            description: Initial release of o3-mini
-      o1:
-        id: o1
-        name: o1
-        documentation_url: https://platform.openai.com/docs/models/o1
-        description_short: High-intelligence reasoning model
-        description: >-
-          The o1 series of models are trained with reinforcement learning to
-          perform complex reasoning. o1 models think before they answer,
-          producing a long internal chain of thought before responding to the
-          user.
+      gpt-4.1:
+        id: gpt-4.1
+        name: GPT-4.1
+        documentation_url: https://developers.openai.com/docs/models/gpt-4.1
+        description_short: Flagship GPT model for complex tasks
+        description: Improved reasoning and problem-solving capabilities
         status: general-availability
-        knowledgeCutoff: October 2023
-        context_window: 200000
-        max_output_tokens: 100000
-        validated: true
+        knowledgeCutoff: Jun 01, 2024
+        context_window: 1047576
+        max_output_tokens: 32768
+        validated: false
         pricing:
-          input_per_million: 15
-          output_per_million: 60
+          input_per_million: 2.0
+          output_per_million: 8.0
         modalities:
           input:
             text: true
-            image: true
+            image: false
             audio: false
             video: false
           output:
@@ -247,7 +306,7 @@ providers:
             video: false
         endpoints:
           assistants: true
-          batch: false
+          batch: true
           chat_completions: true
           completions_legacy: false
           embeddings: false
@@ -260,20 +319,162 @@ providers:
           transcription: false
           translation: false
         versions:
-          - id: o1-2024-12-17
-            release_date: "2024-12-17"
-            isDefault: true
-            isDeprecated: false
-            description: Current version of o1, released December 2024
-          - id: o1-preview-2024-09-12
-            release_date: "2024-09-12"
-            isDefault: false
-            isDeprecated: true
-            description: Preview version of o1, released September 2024 and now deprecated
+        - id: gpt-4.1-2025-04-14
+          release_date: '2025-04-14'
+          isDefault: false
+          isDeprecated: false
+          description: Initial release of GPT-4.1
+      gpt-4.1-mini:
+        id: gpt-4.1-mini
+        name: gpt-4.1-mini
+        documentation_url: https://developers.openai.com/docs/models/gpt-4.1-mini
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Jun 01, 2024
+        context_window: 1047576
+        max_output_tokens: 32768
+        validated: false
+        pricing:
+          input_per_million: 0.4
+          output_per_million: 1.6
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: true
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-4.1-mini-2025-04-14
+          release_date: '2025-04-14'
+          isDefault: false
+          isDeprecated: false
+      gpt-4.1-nano:
+        id: gpt-4.1-nano
+        name: gpt-4.1-nano
+        documentation_url: https://developers.openai.com/docs/models/gpt-4.1-nano
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Jun 01, 2024
+        context_window: 1047576
+        max_output_tokens: 32768
+        validated: false
+        pricing:
+          input_per_million: 0.1
+          output_per_million: 0.4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: true
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-4.1-nano-2025-04-14
+          release_date: '2025-04-14'
+          isDefault: false
+          isDeprecated: false
+      gpt-4o:
+        id: gpt-4o
+        name: GPT-4o
+        documentation_url: https://developers.openai.com/docs/models/gpt-4o
+        description_short: Fast, intelligent, flexible GPT model
+        description: >-
+          GPT-4o ("o" for "omni") is our versatile, high-intelligence flagship
+          model. It accepts both text and image inputs, and produces text
+          outputs (including Structured Outputs). It is the best model for most
+          tasks, and is our most capable model outside of our o-series models.
+        status: general-availability
+        knowledgeCutoff: Oct 01, 2023
+        context_window: 128000
+        max_output_tokens: 16384
+        validated: true
+        pricing:
+          input_per_million: 2.5
+          output_per_million: 10.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: true
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: true
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-4o-2024-05-13
+          release_date: '2024-05-13'
+          isDefault: false
+          isDeprecated: true
+          description: Previous version of GPT-4o, released May 2024 and now deprecated
+        - id: gpt-4o-2024-08-06
+          release_date: '2024-08-06'
+          isDefault: false
+          isDeprecated: false
+          description: Current version of GPT-4o, released August 2024
+        - id: gpt-4o-2024-11-20
+          release_date: '2024-11-20'
+          isDefault: true
+          isDeprecated: false
+          description: Latest version of GPT-4o, released November 2024
       gpt-4o-mini:
         id: gpt-4o-mini
         name: GPT-4o mini
-        documentation_url: https://platform.openai.com/docs/models/gpt-4o-mini
+        documentation_url: https://developers.openai.com/docs/models/gpt-4o-mini
         description_short: Fast, affordable small model for focused tasks
         description: >-
           GPT-4o mini (“o” for “omni”) is a fast, affordable small model for
@@ -283,7 +484,7 @@ providers:
           distilled to GPT-4o-mini to produce similar results at lower cost and
           latency.
         status: preview
-        knowledge_cutoff: Oct 01, 2023
+        knowledgeCutoff: Oct 01, 2023
         context_window: 128000
         max_output_tokens: 16384
         validated: false
@@ -293,7 +494,7 @@ providers:
         modalities:
           input:
             text: true
-            image: true
+            image: false
             audio: false
             video: false
           output:
@@ -316,27 +517,425 @@ providers:
           transcription: false
           translation: false
         versions:
-          - id: gpt-4o-mini-2024-07-18
-            release_date: "2024-07-18"
-            isDefault: true
-            isDeprecated: false
-            description: Current version of o1, released December 2024
-      gpt-4:
-        id: gpt-4
-        name: GPT-4
-        documentation_url: https://platform.openai.com/docs/models/gpt-4
-        description_short: An older high-intelligence GPT model
-        description: >-
-          GPT-4 is an older version of a high-intelligence GPT model, usable in
-          Chat Completions.
+        - id: gpt-4o-mini-2024-07-18
+          release_date: '2024-07-18'
+          isDefault: false
+          isDeprecated: false
+          description: Current version of o1, released December 2024
+      gpt-5:
+        id: gpt-5
+        name: gpt-5
+        documentation_url: https://developers.openai.com/docs/models/gpt-5
+        description_short: ''
+        description: ''
         status: general-availability
-        knowledgeCutoff: December 2023
-        context_window: 8192
-        max_output_tokens: 8192
+        knowledgeCutoff: Sep 30, 2024
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 1.25
+          output_per_million: 10.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5-2025-08-07
+          release_date: '2025-08-07'
+          isDefault: false
+          isDeprecated: false
+      gpt-5-mini:
+        id: gpt-5-mini
+        name: gpt-5-mini
+        documentation_url: https://developers.openai.com/docs/models/gpt-5-mini
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: May 31, 2024
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 0.25
+          output_per_million: 2.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5-mini-2025-08-07
+          release_date: '2025-08-07'
+          isDefault: false
+          isDeprecated: false
+      gpt-5-nano:
+        id: gpt-5-nano
+        name: gpt-5-nano
+        documentation_url: https://developers.openai.com/docs/models/gpt-5-nano
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: May 31, 2024
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 0.05
+          output_per_million: 0.4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5-nano-2025-08-07
+          release_date: '2025-08-07'
+          isDefault: false
+          isDeprecated: false
+      gpt-5-pro:
+        id: gpt-5-pro
+        name: gpt-5-pro
+        documentation_url: https://developers.openai.com/docs/models/gpt-5-pro
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Sep 30, 2024
+        context_window: 400000
+        max_output_tokens: 272000
+        validated: false
+        pricing:
+          input_per_million: 15.0
+          output_per_million: 120.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: false
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5-pro-2025-10-06
+          release_date: '2025-10-06'
+          isDefault: false
+          isDeprecated: false
+      gpt-5.1:
+        id: gpt-5.1
+        name: gpt-5.1
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.1
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Sep 30, 2024
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 1.25
+          output_per_million: 10.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.1-2025-11-13
+          release_date: '2025-11-13'
+          isDefault: false
+          isDeprecated: false
+      gpt-5.2:
+        id: gpt-5.2
+        name: gpt-5.2
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.2
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Aug 31, 2025
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 1.75
+          output_per_million: 14.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.2-2025-12-11
+          release_date: '2025-12-11'
+          isDefault: false
+          isDeprecated: false
+      gpt-5.2-pro:
+        id: gpt-5.2-pro
+        name: gpt-5.2-pro
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.2-pro
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Aug 31, 2025
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 21.0
+          output_per_million: 168.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: false
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.2-pro-2025-12-11
+          release_date: '2025-12-11'
+          isDefault: false
+          isDeprecated: false
+      gpt-5.4:
+        id: gpt-5.4
+        name: gpt-5.4
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.4
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Aug 31, 2025
+        context_window: 1050000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 2.5
+          output_per_million: 15.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.4-2026-03-05
+          release_date: '2026-03-05'
+          isDefault: false
+          isDeprecated: false
+      gpt-5.4-pro:
+        id: gpt-5.4-pro
+        name: gpt-5.4-pro
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.4-pro
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Aug 31, 2025
+        context_window: 1050000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 30.0
+          output_per_million: 180.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: false
+          chat_completions: false
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.4-pro-2026-03-05
+          release_date: '2026-03-05'
+          isDefault: true
+          isDeprecated: false
+      o1:
+        id: o1
+        name: o1
+        documentation_url: https://developers.openai.com/docs/models/o1
+        description_short: High-intelligence reasoning model
+        description: >-
+          The o1 series of models are trained with reinforcement learning to
+          perform complex reasoning. o1 models think before they answer,
+          producing a long internal chain of thought before responding to the
+          user.
+        status: deprecated
+        knowledgeCutoff: Oct 01, 2023
+        context_window: 200000
+        max_output_tokens: 100000
         validated: true
         pricing:
-          input_per_million: 30
-          output_per_million: 60
+          input_per_million: 15.0
+          output_per_million: 60.0
         modalities:
           input:
             text: true
@@ -354,6 +953,232 @@ providers:
           chat_completions: true
           completions_legacy: false
           embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: o1-2024-12-17
+          release_date: '2024-12-17'
+          isDefault: false
+          isDeprecated: false
+          description: Current version of o1, released December 2024
+      o1-pro:
+        id: o1-pro
+        name: o1-pro
+        documentation_url: https://developers.openai.com/docs/models/o1-pro
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Oct 01, 2023
+        context_window: 200000
+        max_output_tokens: 100000
+        validated: false
+        pricing:
+          input_per_million: 150.0
+          output_per_million: 600.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: false
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: o1-pro-2025-03-19
+          release_date: '2025-03-19'
+          isDefault: false
+          isDeprecated: false
+      o3:
+        id: o3
+        name: o3
+        documentation_url: https://developers.openai.com/docs/models/o3
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Jun 01, 2024
+        context_window: 200000
+        max_output_tokens: 100000
+        validated: false
+        pricing:
+          input_per_million: 2.0
+          output_per_million: 8.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: o3-2025-04-16
+          release_date: '2025-04-16'
+          isDefault: false
+          isDeprecated: false
+      o3-mini:
+        id: o3-mini
+        name: o3-mini
+        documentation_url: https://developers.openai.com/docs/models/o3-mini
+        description_short: Fast, flexible, intelligent reasoning model
+        description: >-
+          o3-mini is our newest small reasoning model, providing high
+          intelligence at the same cost and latency targets of o1-mini. o3-mini
+          supports key developer features, like Structured Outputs, function
+          calling, and Batch API.
+        status: preview
+        knowledgeCutoff: Oct 01, 2023
+        context_window: 200000
+        max_output_tokens: 100000
+        validated: true
+        pricing:
+          input_per_million: 1.1
+          output_per_million: 4.4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: true
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: o3-mini-2025-01-31
+          release_date: '2025-01-31'
+          isDefault: true
+          isDeprecated: false
+          description: Initial release of o3-mini
+      o3-pro:
+        id: o3-pro
+        name: o3-pro
+        documentation_url: https://developers.openai.com/docs/models/o3-pro
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Jun 01, 2024
+        context_window: 200000
+        max_output_tokens: 100000
+        validated: false
+        pricing:
+          input_per_million: 20.0
+          output_per_million: 80.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: false
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: o3-pro-2025-06-10
+          release_date: '2025-06-10'
+          isDefault: true
+          isDeprecated: false
+      o4-mini:
+        id: o4-mini
+        name: o4-mini
+        documentation_url: https://developers.openai.com/docs/models/o4-mini
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Jun 01, 2024
+        context_window: 200000
+        max_output_tokens: 100000
+        validated: false
+        pricing:
+          input_per_million: 1.1
+          output_per_million: 4.4
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
           fine_tuning: true
           image_generation: false
           moderation: false
@@ -363,16 +1188,10 @@ providers:
           transcription: false
           translation: false
         versions:
-          - id: gpt-4-0613
-            release_date: 2023-06-13
-            isDefault: true
-            isDeprecated: false
-            description: Current version of GPT-4, released June 2023
-          - id: gpt-4-0314
-            release_date: 2023-03-14
-            isDefault: false
-            isDeprecated: true
-            description: Previous version of GPT-4, released March 2023 and now deprecated
+        - id: o4-mini-2025-04-16
+          release_date: '2025-04-16'
+          isDefault: false
+          isDeprecated: false
   gemini:
     id: gemini
     name: Gemini
@@ -380,8 +1199,8 @@ providers:
     api_specification: generativelanguage.googleapis.com/v1beta
     base_url: https://generativelanguage.googleapis.com/v1beta/
     additional_endpoints: &ref_0
-      - api_specification: api.openai.com/v1
-        base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+    - api_specification: api.openai.com/v1
+      base_url: https://generativelanguage.googleapis.com/v1beta/openai/
     models: &ref_1
       gemini-2.5-pro-preview-03-25:
         id: gemini-2.5-pro-preview-03-25
