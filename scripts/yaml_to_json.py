@@ -3,17 +3,20 @@
 
 import json
 import sys
+from datetime import date, datetime
 from pathlib import Path
 
 from ruamel.yaml import YAML
 
 
 def to_plain(obj):
-    """Convert ruamel.yaml objects to plain Python types."""
+    """Convert ruamel.yaml objects to plain JSON-serializable types."""
     if hasattr(obj, "items"):
         return {str(k): to_plain(v) for k, v in obj.items()}
     if isinstance(obj, list):
         return [to_plain(i) for i in obj]
+    if isinstance(obj, (datetime, date)):
+        return obj.isoformat()
     return obj
 
 
