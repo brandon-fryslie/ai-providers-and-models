@@ -891,6 +891,96 @@ providers:
           isDefault: false
           isDeprecated: false
           description: ''
+      gpt-5.4-mini:
+        id: gpt-5.4-mini
+        name: gpt-5.4-mini
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.4-mini
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Aug 31, 2025
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 0.75
+          output_per_million: 4.5
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.4-mini-2026-03-17
+          release_date: '2026-03-17'
+          isDefault: false
+          isDeprecated: false
+          description: ''
+      gpt-5.4-nano:
+        id: gpt-5.4-nano
+        name: gpt-5.4-nano
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.4-nano
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Aug 31, 2025
+        context_window: 400000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 0.2
+          output_per_million: 1.25
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.4-nano-2026-03-17
+          release_date: '2026-03-17'
+          isDefault: false
+          isDeprecated: false
+          description: ''
       gpt-5.4-pro:
         id: gpt-5.4-pro
         name: gpt-5.4-pro
