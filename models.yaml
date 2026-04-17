@@ -2032,14 +2032,14 @@ providers:
           isDefault: true
           isDeprecated: false
           description: ''
-      claude-opus-4-6:
-        id: claude-opus-4-6
-        name: claude-opus-4-6
+      claude-opus-4-7:
+        id: claude-opus-4-7
+        name: claude-opus-4-7
         documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
-        description_short: The most intelligent model for building agents and coding
-        description: The most intelligent model for building agents and coding
+        description_short: Our most capable generally available model for complex reasoning and agentic coding
+        description: Our most capable generally available model for complex reasoning and agentic coding
         status: general-availability
-        knowledge_cutoff: May 2025
+        knowledge_cutoff: Jan 2026
         context_window: 1000000
         max_output_tokens: 128000
         validated: false
