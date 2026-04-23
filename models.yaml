@@ -17,7 +17,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-3.5-turbo
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Sep 01, 2021
         context_window: 16385
         max_output_tokens: 4096
@@ -333,7 +333,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-4.1-nano
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Jun 01, 2024
         context_window: 1047576
         max_output_tokens: 32768
@@ -382,7 +382,7 @@ providers:
           model. It accepts both text and image inputs, and produces text
           outputs (including Structured Outputs). It is the best model for most
           tasks, and is our most capable model outside of our o-series models.
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Oct 01, 2023
         context_window: 128000
         max_output_tokens: 16384
@@ -1032,7 +1032,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/o1-pro
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Oct 01, 2023
         context_window: 200000
         max_output_tokens: 100000
@@ -1126,7 +1126,7 @@ providers:
           intelligence at the same cost and latency targets of o1-mini. o3-mini
           supports key developer features, like Structured Outputs, function
           calling, and Batch API.
-        status: preview
+        status: deprecated
         knowledgeCutoff: Oct 01, 2023
         context_window: 200000
         max_output_tokens: 100000
@@ -1216,7 +1216,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/o4-mini
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Jun 01, 2024
         context_window: 200000
         max_output_tokens: 100000
