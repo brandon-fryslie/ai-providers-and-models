@@ -977,6 +977,96 @@ providers:
           isDefault: true
           isDeprecated: false
           description: ''
+      gpt-5.5:
+        id: gpt-5.5
+        name: gpt-5.5
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.5
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Dec 01, 2025
+        context_window: 1050000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 5.0
+          output_per_million: 30.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.5-2026-04-23
+          release_date: '2026-04-23'
+          isDefault: true
+          isDeprecated: false
+          description: ''
+      gpt-5.5-pro:
+        id: gpt-5.5-pro
+        name: gpt-5.5-pro
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.5-pro
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Dec 01, 2025
+        context_window: 1050000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 30.0
+          output_per_million: 180.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: false
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+        versions:
+        - id: gpt-5.5-pro-2026-04-23
+          release_date: '2026-04-23'
+          isDefault: true
+          isDeprecated: false
+          description: ''
       o1:
         id: o1
         name: o1
