@@ -2200,15 +2200,15 @@ providers:
           isDefault: true
           isDeprecated: false
           description: ''
-      claude-opus-4-7:
-        id: claude-opus-4-7
-        name: claude-opus-4-7
+      claude-opus-4-8:
+        id: claude-opus-4-8
+        name: claude-opus-4-8
         documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
-        description_short: Our most capable generally available model for complex reasoning and agentic coding
-        description: Our most capable generally available model for complex reasoning and agentic coding
+        description_short: Anthropic's most capable model for complex reasoning and agentic coding
+        description: Anthropic's most capable model for complex reasoning and agentic coding
         status: general-availability
         knowledge_cutoff: Jan 2026
-        context_window: 1000000
+        context_window: 0
         max_output_tokens: 128000
         validated: false
         pricing:
