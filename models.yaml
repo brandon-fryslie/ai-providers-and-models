@@ -153,7 +153,7 @@ providers:
         description: >-
           GPT-4 is an older version of a high-intelligence GPT model, usable in
           Chat Completions.
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Dec 01, 2023
         context_window: 8192
         max_output_tokens: 8192
