@@ -2155,6 +2155,45 @@ providers:
     api_specification: api.anthropic.com/v1
     base_url: https://api.anthropic.com/v1/
     models:
+      claude-fable-5:
+        id: claude-fable-5
+        name: claude-fable-5
+        documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
+        description_short: Anthropic's most capable widely released model, for the most demanding reasoning and long-horizon agentic work
+        description: Anthropic's most capable widely released model, for the most demanding reasoning and long-horizon agentic work
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 1000000
+        max_output_tokens: 0
+        validated: false
+        pricing:
+          input_per_million: 0.0
+          output_per_million: 0.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
       claude-haiku-4-5:
         id: claude-haiku-4-5
         name: claude-haiku-4-5
@@ -2162,13 +2201,13 @@ providers:
         description_short: The fastest model with near-frontier intelligence
         description: The fastest model with near-frontier intelligence
         status: legacy
-        knowledge_cutoff: Feb 2025
-        context_window: 200000
-        max_output_tokens: 64000
+        knowledge_cutoff: ''
+        context_window: 0
+        max_output_tokens: 0
         validated: false
         pricing:
-          input_per_million: 1.0
-          output_per_million: 5.0
+          input_per_million: 0.0
+          output_per_million: 0.0
         modalities:
           input:
             text: true
@@ -2200,6 +2239,45 @@ providers:
           isDefault: true
           isDeprecated: false
           description: ''
+      claude-mythos-5:
+        id: claude-mythos-5
+        name: claude-mythos-5
+        documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
+        description_short: Available through Project Glasswing. Successor to Claude Mythos Preview.
+        description: Available through Project Glasswing. Successor to Claude Mythos Preview.
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 1000000
+        max_output_tokens: 0
+        validated: false
+        pricing:
+          input_per_million: 0.0
+          output_per_million: 0.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
       claude-opus-4-8:
         id: claude-opus-4-8
         name: claude-opus-4-8
@@ -2207,13 +2285,13 @@ providers:
         description_short: Anthropic's most capable model for complex reasoning and agentic coding
         description: Anthropic's most capable model for complex reasoning and agentic coding
         status: general-availability
-        knowledge_cutoff: Jan 2026
+        knowledge_cutoff: ''
         context_window: 0
-        max_output_tokens: 128000
+        max_output_tokens: 0
         validated: false
         pricing:
-          input_per_million: 5.0
-          output_per_million: 25.0
+          input_per_million: 0.0
+          output_per_million: 0.0
         modalities:
           input:
             text: true
@@ -2246,13 +2324,13 @@ providers:
         description_short: The best combination of speed and intelligence
         description: The best combination of speed and intelligence
         status: general-availability
-        knowledge_cutoff: Aug 2025
-        context_window: 1000000
-        max_output_tokens: 64000
+        knowledge_cutoff: ''
+        context_window: 0
+        max_output_tokens: 0
         validated: false
         pricing:
-          input_per_million: 3.0
-          output_per_million: 15.0
+          input_per_million: 0.0
+          output_per_million: 0.0
         modalities:
           input:
             text: true
