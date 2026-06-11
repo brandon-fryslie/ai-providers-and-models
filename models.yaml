@@ -2164,11 +2164,11 @@ providers:
         status: general-availability
         knowledge_cutoff: ''
         context_window: 1000000
-        max_output_tokens: 0
+        max_output_tokens: 128000
         validated: false
         pricing:
-          input_per_million: 0.0
-          output_per_million: 0.0
+          input_per_million: 10.0
+          output_per_million: 50.0
         modalities:
           input:
             text: true
@@ -2201,13 +2201,13 @@ providers:
         description_short: The fastest model with near-frontier intelligence
         description: The fastest model with near-frontier intelligence
         status: legacy
-        knowledge_cutoff: ''
-        context_window: 0
-        max_output_tokens: 0
+        knowledge_cutoff: Feb 2025
+        context_window: 200000
+        max_output_tokens: 64000
         validated: false
         pricing:
-          input_per_million: 0.0
-          output_per_million: 0.0
+          input_per_million: 1.0
+          output_per_million: 5.0
         modalities:
           input:
             text: true
@@ -2248,11 +2248,11 @@ providers:
         status: general-availability
         knowledge_cutoff: ''
         context_window: 1000000
-        max_output_tokens: 0
+        max_output_tokens: 128000
         validated: false
         pricing:
-          input_per_million: 0.0
-          output_per_million: 0.0
+          input_per_million: 10.0
+          output_per_million: 50.0
         modalities:
           input:
             text: true
@@ -2285,13 +2285,13 @@ providers:
         description_short: Anthropic's most capable model for complex reasoning and agentic coding
         description: Anthropic's most capable model for complex reasoning and agentic coding
         status: general-availability
-        knowledge_cutoff: ''
+        knowledge_cutoff: Jan 2026
         context_window: 0
-        max_output_tokens: 0
+        max_output_tokens: 128000
         validated: false
         pricing:
-          input_per_million: 0.0
-          output_per_million: 0.0
+          input_per_million: 5.0
+          output_per_million: 25.0
         modalities:
           input:
             text: true
@@ -2324,13 +2324,13 @@ providers:
         description_short: The best combination of speed and intelligence
         description: The best combination of speed and intelligence
         status: general-availability
-        knowledge_cutoff: ''
-        context_window: 0
-        max_output_tokens: 0
+        knowledge_cutoff: Aug 2025
+        context_window: 1000000
+        max_output_tokens: 64000
         validated: false
         pricing:
-          input_per_million: 0.0
-          output_per_million: 0.0
+          input_per_million: 3.0
+          output_per_million: 15.0
         modalities:
           input:
             text: true
