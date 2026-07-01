@@ -1662,8 +1662,8 @@ providers:
         max_output_tokens: 65536
         validated: false
         pricing:
-          input_per_million: 0.45
-          output_per_million: 2.7
+          input_per_million: 1.5
+          output_per_million: 9.0
         modalities:
           input:
             text: true
@@ -1701,8 +1701,8 @@ providers:
         max_output_tokens: 65536
         validated: false
         pricing:
-          input_per_million: 0.45
-          output_per_million: 2.7
+          input_per_million: 1.5
+          output_per_million: 9.0
         modalities:
           input:
             text: true
@@ -1834,6 +1834,45 @@ providers:
         endpoints:
           assistants: false
           batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-omni-flash-preview:
+        id: models/gemini-omni-flash-preview
+        name: Gemini Omni Flash Preview
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-omni-flash-preview
+        description_short: Gemini Omni Flash Preview
+        description: Gemini Omni Flash Preview
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 131072
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0
+          output_per_million: 0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: false
           chat_completions: true
           completions_legacy: false
           embeddings: false
@@ -2317,14 +2356,14 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-      claude-sonnet-4-6:
-        id: claude-sonnet-4-6
-        name: claude-sonnet-4-6
+      claude-sonnet-5:
+        id: claude-sonnet-5
+        name: claude-sonnet-5
         documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
         description_short: The best combination of speed and intelligence
         description: The best combination of speed and intelligence
         status: general-availability
-        knowledge_cutoff: Aug 2025
+        knowledge_cutoff: Jan 2026
         context_window: 1000000
         max_output_tokens: 128000
         validated: false
