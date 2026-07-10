@@ -1067,6 +1067,123 @@ providers:
           isDefault: true
           isDeprecated: false
           description: ''
+      gpt-5.6-luna:
+        id: gpt-5.6-luna
+        name: gpt-5.6-luna
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.6-luna
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Feb 16, 2026
+        context_window: 1050000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 1.0
+          output_per_million: 6.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      gpt-5.6-sol:
+        id: gpt-5.6-sol
+        name: gpt-5.6-sol
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.6-sol
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Feb 16, 2026
+        context_window: 1050000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 5.0
+          output_per_million: 30.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      gpt-5.6-terra:
+        id: gpt-5.6-terra
+        name: gpt-5.6-terra
+        documentation_url: https://developers.openai.com/docs/models/gpt-5.6-terra
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledgeCutoff: Feb 16, 2026
+        context_window: 1050000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 2.5
+          output_per_million: 15.0
+        modalities:
+          input:
+            text: true
+            image: false
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
       o1:
         id: o1
         name: o1
