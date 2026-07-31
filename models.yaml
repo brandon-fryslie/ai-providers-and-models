@@ -488,7 +488,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Sep 30, 2024
         context_window: 400000
         max_output_tokens: 128000
@@ -533,7 +533,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5-mini
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: May 31, 2024
         context_window: 400000
         max_output_tokens: 128000
@@ -578,7 +578,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5-nano
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: May 31, 2024
         context_window: 400000
         max_output_tokens: 128000
@@ -623,7 +623,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5-pro
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Sep 30, 2024
         context_window: 400000
         max_output_tokens: 272000
@@ -1079,8 +1079,8 @@ providers:
         max_output_tokens: 128000
         validated: false
         pricing:
-          input_per_million: 1.0
-          output_per_million: 6.0
+          input_per_million: 0.2
+          output_per_million: 1.2
         modalities:
           input:
             text: true
@@ -1157,8 +1157,8 @@ providers:
         max_output_tokens: 128000
         validated: false
         pricing:
-          input_per_million: 2.5
-          output_per_million: 15.0
+          input_per_million: 2.0
+          output_per_million: 12.0
         modalities:
           input:
             text: true
@@ -1284,7 +1284,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/o3
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Jun 01, 2024
         context_window: 200000
         max_output_tokens: 100000
@@ -1378,7 +1378,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/o3-pro
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Jun 01, 2024
         context_window: 200000
         max_output_tokens: 100000
@@ -2124,6 +2124,45 @@ providers:
         documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-robotics-er-1.6-preview
         description_short: Gemini Robotics-ER 1.6 Preview
         description: Gemini Robotics-ER 1.6 Preview
+        status: preview
+        knowledge_cutoff: ''
+        context_window: 131072
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0
+          output_per_million: 0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-robotics-er-2-preview:
+        id: models/gemini-robotics-er-2-preview
+        name: Gemini Robotics-ER 2 Preview
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-robotics-er-2-preview
+        description_short: Gemini Robotics-ER 2 Preview
+        description: Gemini Robotics-ER 2 Preview
         status: preview
         knowledge_cutoff: ''
         context_window: 131072
