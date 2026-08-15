@@ -1940,6 +1940,45 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
+      models/gemini-3.7-flash-video-understanding-eap:
+        id: models/gemini-3.7-flash-video-understanding-eap
+        name: '[Confidential] Gemini 3.7 Flash Video Understanding EAP'
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-3.7-flash-video-understanding-eap
+        description_short: '[Confidential] Gemini 3.7 Flash Video Understanding EAP'
+        description: '[Confidential] Gemini 3.7 Flash Video Understanding EAP'
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 1.35
+          output_per_million: 6.75
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
       models/gemini-omni-flash-preview:
         id: models/gemini-omni-flash-preview
         name: Gemini Omni Flash Preview
