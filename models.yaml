@@ -2414,7 +2414,7 @@ providers:
         description: Anthropic's most capable widely released model, for the most demanding reasoning and long-horizon agentic work
         status: general-availability
         knowledge_cutoff: Jan 2026
-        context_window: 0
+        context_window: 1000000
         max_output_tokens: 128000
         validated: false
         pricing:
@@ -2453,7 +2453,7 @@ providers:
         description: The fastest model with near-frontier intelligence
         status: legacy
         knowledge_cutoff: Feb 2025
-        context_window: 0
+        context_window: 200000
         max_output_tokens: 64000
         validated: false
         pricing:
@@ -2498,7 +2498,7 @@ providers:
         description: For complex agentic coding and enterprise work
         status: general-availability
         knowledge_cutoff: May 2026
-        context_window: 0
+        context_window: 1000000
         max_output_tokens: 128000
         validated: false
         pricing:
@@ -2537,7 +2537,7 @@ providers:
         description: The best combination of speed and intelligence
         status: general-availability
         knowledge_cutoff: Jan 2026
-        context_window: 0
+        context_window: 1000000
         max_output_tokens: 128000
         validated: false
         pricing:
