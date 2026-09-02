@@ -2406,14 +2406,14 @@ providers:
     api_specification: api.anthropic.com/v1
     base_url: https://api.anthropic.com/v1/
     models:
-      claude-fable-5:
-        id: claude-fable-5
-        name: claude-fable-5
+      claude-fable-5-1:
+        id: claude-fable-5-1
+        name: claude-fable-5-1
         documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
-        description_short: Anthropic's most capable widely released model, for the most demanding reasoning and long-horizon agentic work
-        description: Anthropic's most capable widely released model, for the most demanding reasoning and long-horizon agentic work
+        description_short: ''
+        description: ''
         status: general-availability
-        knowledge_cutoff: Jan 2026
+        knowledge_cutoff: Jun 2026
         context_window: 1000000
         max_output_tokens: 128000
         validated: false
