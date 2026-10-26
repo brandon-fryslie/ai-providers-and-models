@@ -163,13 +163,17 @@ def _extract_from_text(text: str) -> dict:
         line_s = line.strip()
         next_line = lines[i + 1].strip() if i + 1 < len(lines) else ""
 
-        # Context window: number on this line, "context window" on next
-        if re.match(r"^[0-9,]+$", line_s) and "context" in next_line.lower():
-            result["context_window"] = int(line_s.replace(",", ""))
+        # Stats render as "128,000 context window" on one line, or as the
+        # number on this line and the label on the next
+        stat = line_s if not re.match(r"^[0-9][0-9,]*$", line_s) else f"{line_s} {next_line}"
 
-        # Max output tokens: number on this line, "max output" on next
-        if re.match(r"^[0-9,]+$", line_s) and "output" in next_line.lower() and "max" in next_line.lower():
-            result["max_output_tokens"] = int(line_s.replace(",", ""))
+        m = re.match(r"^([0-9][0-9,]*)\s+context\s+window", stat, re.IGNORECASE)
+        if m:
+            result["context_window"] = int(m.group(1).replace(",", ""))
+
+        m = re.match(r"^([0-9][0-9,]*)\s+max\s+output", stat, re.IGNORECASE)
+        if m:
+            result["max_output_tokens"] = int(m.group(1).replace(",", ""))
 
         # Knowledge cutoff: "MMM DD, YYYY knowledge cutoff" or similar
         m = re.match(r"^(.+?)\s+knowledge\s+cutoff", line_s, re.IGNORECASE)
@@ -200,23 +204,15 @@ def _extract_from_text(text: str) -> dict:
             result["video_input"] = True
 
     # Also try single-line patterns as fallback
-    for pattern in [
-        r"[Cc]ontext\s+window\s*[:\s]*([0-9,]+)",
-        r"([0-9,]+)\s*(?:token)?\s*context\s*window",
-    ]:
-        if "context_window" not in result:
-            m = re.search(pattern, text)
-            if m:
-                result["context_window"] = int(m.group(1).replace(",", ""))
+    if "context_window" not in result:
+        m = re.search(r"([0-9][0-9,]*)\s*(?:token)?\s*context\s*window", text)
+        if m:
+            result["context_window"] = int(m.group(1).replace(",", ""))
 
-    for pattern in [
-        r"[Mm]ax\s+output\s*[:\s]*([0-9,]+)",
-        r"([0-9,]+)\s*max\s*output",
-    ]:
-        if "max_output_tokens" not in result:
-            m = re.search(pattern, text)
-            if m:
-                result["max_output_tokens"] = int(m.group(1).replace(",", ""))
+    if "max_output_tokens" not in result:
+        m = re.search(r"([0-9][0-9,]*)\s*max\s*output", text)
+        if m:
+            result["max_output_tokens"] = int(m.group(1).replace(",", ""))
 
     # Description - first long quoted string or sentence about the model
     m = re.search(r"\u201c([^\u201d]{20,300})\u201d", text)  # smart quotes
