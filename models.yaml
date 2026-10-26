@@ -17,7 +17,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-3.5-turbo
         description_short: ''
         description: ''
-        status: deprecated
+        status: preview
         knowledgeCutoff: Sep 01, 2021
         context_window: 16385
         max_output_tokens: 4096
@@ -106,7 +106,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-3.5-turbo-instruct
         description_short: ''
         description: ''
-        status: deprecated
+        status: preview
         knowledgeCutoff: Sep 01, 2021
         context_window: 4096
         max_output_tokens: 4096
@@ -153,7 +153,7 @@ providers:
         description: >-
           GPT-4 is an older version of a high-intelligence GPT model, usable in
           Chat Completions.
-        status: deprecated
+        status: preview
         knowledgeCutoff: Dec 01, 2023
         context_window: 8192
         max_output_tokens: 8192
@@ -198,7 +198,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-4-turbo
         description_short: ''
         description: ''
-        status: deprecated
+        status: preview
         knowledgeCutoff: Dec 01, 2023
         context_window: 128000
         max_output_tokens: 4096
@@ -243,7 +243,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-4.1
         description_short: Flagship GPT model for complex tasks
         description: Improved reasoning and problem-solving capabilities
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Jun 01, 2024
         context_window: 1047576
         max_output_tokens: 32768
@@ -288,7 +288,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-4.1-mini
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Jun 01, 2024
         context_window: 1047576
         max_output_tokens: 32768
@@ -333,7 +333,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-4.1-nano
         description_short: ''
         description: ''
-        status: deprecated
+        status: preview
         knowledgeCutoff: Jun 01, 2024
         context_window: 1047576
         max_output_tokens: 32768
@@ -443,7 +443,7 @@ providers:
           fine-tuning, and model outputs from a larger model like GPT-4o can be
           distilled to GPT-4o-mini to produce similar results at lower cost and
           latency.
-        status: preview
+        status: deprecated
         knowledgeCutoff: Oct 01, 2023
         context_window: 128000
         max_output_tokens: 16384
@@ -668,7 +668,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.1
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Sep 30, 2024
         context_window: 400000
         max_output_tokens: 128000
@@ -713,7 +713,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.2
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Aug 31, 2025
         context_window: 400000
         max_output_tokens: 128000
@@ -758,7 +758,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.2-pro
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Aug 31, 2025
         context_window: 400000
         max_output_tokens: 128000
@@ -803,7 +803,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.4
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Aug 31, 2025
         context_window: 1050000
         max_output_tokens: 128000
@@ -848,7 +848,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.4-mini
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Aug 31, 2025
         context_window: 400000
         max_output_tokens: 128000
@@ -893,7 +893,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.4-nano
         description_short: ''
         description: ''
-        status: general-availability
+        status: deprecated
         knowledgeCutoff: Aug 31, 2025
         context_window: 400000
         max_output_tokens: 128000
@@ -938,7 +938,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.4-pro
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Aug 31, 2025
         context_window: 1050000
         max_output_tokens: 128000
@@ -983,7 +983,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.5
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Dec 01, 2025
         context_window: 1050000
         max_output_tokens: 128000
@@ -1028,7 +1028,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.5-pro
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Dec 01, 2025
         context_window: 1050000
         max_output_tokens: 128000
@@ -1073,7 +1073,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.6-luna
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Feb 16, 2026
         context_window: 1050000
         max_output_tokens: 128000
@@ -1112,7 +1112,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.6-sol
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Feb 16, 2026
         context_window: 1050000
         max_output_tokens: 128000
@@ -1151,7 +1151,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/gpt-5.6-terra
         description_short: ''
         description: ''
-        status: general-availability
+        status: preview
         knowledgeCutoff: Feb 16, 2026
         context_window: 1050000
         max_output_tokens: 128000
@@ -1194,7 +1194,7 @@ providers:
           perform complex reasoning. o1 models think before they answer,
           producing a long internal chain of thought before responding to the
           user.
-        status: deprecated
+        status: preview
         knowledgeCutoff: Oct 01, 2023
         context_window: 200000
         max_output_tokens: 100000
@@ -1239,7 +1239,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/o1-pro
         description_short: ''
         description: ''
-        status: deprecated
+        status: preview
         knowledgeCutoff: Oct 01, 2023
         context_window: 200000
         max_output_tokens: 100000
@@ -1333,7 +1333,7 @@ providers:
           intelligence at the same cost and latency targets of o1-mini. o3-mini
           supports key developer features, like Structured Outputs, function
           calling, and Batch API.
-        status: deprecated
+        status: preview
         knowledgeCutoff: Oct 01, 2023
         context_window: 200000
         max_output_tokens: 100000
@@ -1423,7 +1423,7 @@ providers:
         documentation_url: https://developers.openai.com/docs/models/o4-mini
         description_short: ''
         description: ''
-        status: deprecated
+        status: preview
         knowledgeCutoff: Jun 01, 2024
         context_window: 200000
         max_output_tokens: 100000
@@ -1718,8 +1718,8 @@ providers:
         max_output_tokens: 65536
         validated: false
         pricing:
-          input_per_million: 3.6
-          output_per_million: 21.6
+          input_per_million: 0.75
+          output_per_million: 3.75
         modalities:
           input:
             text: true
@@ -1757,8 +1757,8 @@ providers:
         max_output_tokens: 65536
         validated: false
         pricing:
-          input_per_million: 3.6
-          output_per_million: 21.6
+          input_per_million: 0.75
+          output_per_million: 3.75
         modalities:
           input:
             text: true
@@ -1796,8 +1796,8 @@ providers:
         max_output_tokens: 65536
         validated: false
         pricing:
-          input_per_million: 2.7
-          output_per_million: 16.2
+          input_per_million: 0.15
+          output_per_million: 1.25
         modalities:
           input:
             text: true
@@ -1835,8 +1835,8 @@ providers:
         max_output_tokens: 65536
         validated: false
         pricing:
-          input_per_million: 2.7
-          output_per_million: 16.2
+          input_per_million: 0.15
+          output_per_million: 1.25
         modalities:
           input:
             text: true
@@ -1898,45 +1898,6 @@ providers:
           moderation: false
           realtime: false
           responses: true
-          speech_generation: false
-          transcription: false
-          translation: false
-      models/gemini-3.5-transcribe-live:
-        id: models/gemini-3.5-transcribe-live
-        name: Gemini 3.5 Transcribe Live
-        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-3.5-transcribe-live
-        description_short: Gemini 3.5 Transcribe Live
-        description: Gemini 3.5 Transcribe Live
-        status: general-availability
-        knowledge_cutoff: ''
-        context_window: 131072
-        max_output_tokens: 65536
-        validated: false
-        pricing:
-          input_per_million: 3.5
-          output_per_million: 21.0
-        modalities:
-          input:
-            text: true
-            image: true
-            audio: true
-            video: true
-          output:
-            text: true
-            image: false
-            audio: false
-            video: false
-        endpoints:
-          assistants: false
-          batch: false
-          chat_completions: false
-          completions_legacy: false
-          embeddings: false
-          fine_tuning: false
-          image_generation: false
-          moderation: false
-          realtime: false
-          responses: false
           speech_generation: false
           transcription: false
           translation: false
@@ -2030,8 +1991,86 @@ providers:
         max_output_tokens: 65536
         validated: false
         pricing:
-          input_per_million: 1.35
-          output_per_million: 6.75
+          input_per_million: 0.375
+          output_per_million: 1.875
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-4-argon:
+        id: models/gemini-4-argon
+        name: Gemini 4 Argon
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-4-argon
+        description_short: Gemini 4 Argon
+        description: Gemini 4 Argon
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 1048576
+        max_output_tokens: 32768
+        validated: false
+        pricing:
+          input_per_million: 1.0
+          output_per_million: 5.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: true
+            video: true
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      models/gemini-nano-banana-2.1:
+        id: models/gemini-nano-banana-2.1
+        name: Nano Banana 2.1
+        documentation_url: https://ai.google.dev/gemini-api/docs/models#gemini-nano-banana-2.1
+        description_short: Gemini Nano Banana 2.1.
+        description: Gemini Nano Banana 2.1.
+        status: general-availability
+        knowledge_cutoff: ''
+        context_window: 65536
+        max_output_tokens: 65536
+        validated: false
+        pricing:
+          input_per_million: 0
+          output_per_million: 0
         modalities:
           input:
             text: true
@@ -2445,65 +2484,20 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-      claude-haiku-4-5:
-        id: claude-haiku-4-5
-        name: claude-haiku-4-5
+      claude-haiku-5-5:
+        id: claude-haiku-5-5
+        name: claude-haiku-5-5
         documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
-        description_short: The fastest model with near-frontier intelligence
-        description: The fastest model with near-frontier intelligence
-        status: legacy
-        knowledge_cutoff: Feb 2025
-        context_window: 200000
-        max_output_tokens: 64000
-        validated: false
-        pricing:
-          input_per_million: 1.0
-          output_per_million: 5.0
-        modalities:
-          input:
-            text: true
-            image: true
-            audio: false
-            video: false
-          output:
-            text: true
-            image: false
-            audio: false
-            video: false
-        endpoints:
-          assistants: false
-          batch: true
-          chat_completions: true
-          completions_legacy: false
-          embeddings: false
-          fine_tuning: false
-          image_generation: false
-          moderation: false
-          realtime: false
-          responses: true
-          speech_generation: false
-          transcription: false
-          translation: false
-        versions:
-        - id: claude-haiku-4-5-20251001
-          release_date: '2025-10-01'
-          isDefault: true
-          isDeprecated: false
-          description: ''
-      claude-opus-5:
-        id: claude-opus-5
-        name: claude-opus-5
-        documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
-        description_short: For complex agentic coding and enterprise work
-        description: For complex agentic coding and enterprise work
+        description_short: ''
+        description: ''
         status: general-availability
-        knowledge_cutoff: May 2026
+        knowledge_cutoff: Jun 2026
         context_window: 1000000
         max_output_tokens: 128000
         validated: false
         pricing:
-          input_per_million: 5.0
-          output_per_million: 25.0
+          input_per_million: 0.1
+          output_per_million: 0.5
         modalities:
           input:
             text: true
@@ -2529,14 +2523,53 @@ providers:
           speech_generation: false
           transcription: false
           translation: false
-      claude-sonnet-5:
-        id: claude-sonnet-5
-        name: claude-sonnet-5
+      claude-opus-5-5:
+        id: claude-opus-5-5
+        name: claude-opus-5-5
         documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
-        description_short: The best combination of speed and intelligence
-        description: The best combination of speed and intelligence
+        description_short: ''
+        description: ''
         status: general-availability
-        knowledge_cutoff: Jan 2026
+        knowledge_cutoff: Jun 2026
+        context_window: 1000000
+        max_output_tokens: 128000
+        validated: false
+        pricing:
+          input_per_million: 4.0
+          output_per_million: 20.0
+        modalities:
+          input:
+            text: true
+            image: true
+            audio: false
+            video: false
+          output:
+            text: true
+            image: false
+            audio: false
+            video: false
+        endpoints:
+          assistants: false
+          batch: true
+          chat_completions: true
+          completions_legacy: false
+          embeddings: false
+          fine_tuning: false
+          image_generation: false
+          moderation: false
+          realtime: false
+          responses: true
+          speech_generation: false
+          transcription: false
+          translation: false
+      claude-sonnet-5-5:
+        id: claude-sonnet-5-5
+        name: claude-sonnet-5-5
+        documentation_url: https://docs.anthropic.com/en/docs/about-claude/models
+        description_short: ''
+        description: ''
+        status: general-availability
+        knowledge_cutoff: Jun 2026
         context_window: 1000000
         max_output_tokens: 128000
         validated: false
