@@ -15,6 +15,8 @@ from bs4 import BeautifulSoup
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
+from update_common import build_entries, exit_if_failed
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MODELS_YAML = REPO_ROOT / "models.yaml"
 DOCS_URL = "https://platform.claude.com/docs/en/docs/about-claude/models"
@@ -347,12 +349,11 @@ def main():
     existing_models = dict(data["providers"]["claude"].get("models", {}) or {})
 
     # 5. Build entries
-    new_models = CommentedMap()
-    for base_id in sorted(groups.keys()):
-        print(f"  Processing {base_id}...", file=sys.stderr)
+    def build(base_id: str) -> dict:
         existing = dict(existing_models[base_id]) if base_id in existing_models else None
-        entry = build_model_entry(base_id, groups[base_id], existing)
-        new_models[base_id] = entry
+        return build_model_entry(base_id, groups[base_id], existing)
+
+    new_models, failed = build_entries(sorted(groups.keys()), existing_models, build)
 
     # 6. Update YAML
     data["providers"]["claude"]["models"] = new_models
@@ -364,6 +365,8 @@ def main():
         with open(args.yaml_path, "w") as f:
             yml.dump(data, f)
         print(f"Updated {len(new_models)} Claude models in {args.yaml_path}", file=sys.stderr)
+
+    exit_if_failed("Claude", failed)
 
 
 if __name__ == "__main__":

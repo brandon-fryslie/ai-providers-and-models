@@ -17,6 +17,8 @@ from bs4 import BeautifulSoup
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
+from update_common import build_entries, exit_if_failed
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MODELS_YAML = REPO_ROOT / "models.yaml"
 OPENAI_API_URL = "https://api.openai.com/v1/models"
@@ -429,14 +431,15 @@ def main():
     existing_models = dict(data["providers"]["openai"].get("models", {}))
 
     # 4. Scrape docs + build entries
-    new_models = CommentedMap()
-    for base_id in sorted(groups.keys()):
-        print(f"  Processing {base_id}...", file=sys.stderr)
-        scraped = scrape_model_page(base_id)
+    def build(base_id: str) -> dict:
+        try:
+            scraped = scrape_model_page(base_id)
+        finally:
+            time.sleep(SCRAPE_DELAY)
         existing = dict(existing_models[base_id]) if base_id in existing_models else None
-        entry = build_model_entry(base_id, groups[base_id], scraped, existing)
-        new_models[base_id] = entry
-        time.sleep(SCRAPE_DELAY)
+        return build_model_entry(base_id, groups[base_id], scraped, existing)
+
+    new_models, failed = build_entries(sorted(groups.keys()), existing_models, build)
 
     # 5. Update YAML
     data["providers"]["openai"]["models"] = new_models
@@ -448,6 +451,8 @@ def main():
         with open(args.yaml_path, "w") as f:
             yml.dump(data, f)
         print(f"Updated {len(new_models)} OpenAI models in {args.yaml_path}", file=sys.stderr)
+
+    exit_if_failed("OpenAI", failed)
 
 
 if __name__ == "__main__":

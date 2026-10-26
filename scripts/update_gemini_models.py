@@ -16,6 +16,8 @@ from bs4 import BeautifulSoup
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
 
+from update_common import build_entries, exit_if_failed
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 MODELS_YAML = REPO_ROOT / "models.yaml"
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models"
@@ -331,13 +333,11 @@ def main():
         existing_models[k] = dict(v) if v else {}
 
     # 5. Build new model entries
-    new_models = CommentedMap()
-    for base_id in sorted(groups.keys()):
-        print(f"  Processing {base_id}...", file=sys.stderr)
+    def build(base_id: str) -> dict:
         pricing_match = find_pricing_for_model(base_id, pricing_data)
-        existing = existing_models.get(base_id)
-        entry = build_model_entry(base_id, groups[base_id], pricing_match, existing)
-        new_models[base_id] = entry
+        return build_model_entry(base_id, groups[base_id], pricing_match, existing_models.get(base_id))
+
+    new_models, failed = build_entries(sorted(groups.keys()), gemini_provider.get("models", {}), build)
 
     # 6. Update YAML - replace gemini.models with anchor preserved
     # The gemini_openai provider uses *ref_1 which points to &ref_1 on gemini.models.
@@ -353,6 +353,8 @@ def main():
         with open(args.yaml_path, "w") as f:
             yml.dump(data, f)
         print(f"Updated {len(new_models)} Gemini models in {args.yaml_path}", file=sys.stderr)
+
+    exit_if_failed("Gemini", failed)
 
 
 if __name__ == "__main__":

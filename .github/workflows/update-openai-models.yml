@@ -24,16 +24,22 @@ jobs:
         run: pip install -r scripts/requirements.txt
 
       - name: Update OpenAI models
+        id: openai
+        continue-on-error: true  # one provider breaking must not block the others
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python scripts/update_openai_models.py
 
       - name: Update Gemini models
+        id: gemini
+        continue-on-error: true  # one provider breaking must not block the others
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/update_gemini_models.py
 
       - name: Update Anthropic models
+        id: anthropic
+        continue-on-error: true  # one provider breaking must not block the others
         run: python scripts/update_anthropic_models.py
 
       - name: Validate schema
@@ -56,8 +62,15 @@ jobs:
         with:
           path: _site
 
+      - name: Fail if any provider failed
+        if: steps.openai.outcome == 'failure' || steps.gemini.outcome == 'failure' || steps.anthropic.outcome == 'failure'
+        run: |
+          echo "::error::Provider updates failed - openai: ${{ steps.openai.outcome }}, gemini: ${{ steps.gemini.outcome }}, anthropic: ${{ steps.anthropic.outcome }}"
+          exit 1
+
   deploy-pages:
     needs: update-models
+    if: ${{ !cancelled() }}  # publish what updated even when one provider failed
     runs-on: ubuntu-24.04
     permissions:
       pages: write

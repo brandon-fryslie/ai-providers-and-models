@@ -1,57 +1,65 @@
 # ai-providers-and-models
 
-Automatically updated catalog of AI providers, models, and the APIs they support. Data is refreshed daily from provider APIs and documentation.
+A catalog of AI models from OpenAI, Google Gemini, and Anthropic Claude: pricing, context windows, endpoints, and modalities. It is rebuilt every day from the providers' own APIs and documentation.
 
-**Live JSON endpoint:** [brandon-fryslie.github.io/ai-providers-and-models/models.json](https://brandon-fryslie.github.io/ai-providers-and-models/models.json)
-
-## Providers
-
-| Provider | Models | Data Source |
-|----------|--------|-------------|
-| **OpenAI** | GPT-3.5 through GPT-5.4, o1, o3, o4 | `/v1/models` API + docs scraping |
-| **Google Gemini** | Gemini 2.0 through 3.1 | Gemini API + pricing page scraping |
-| **Anthropic Claude** | Claude Haiku 4.5, Sonnet 4.6, Opus 4.6 | Docs page scraping |
-
-## What's in the data
-
-For each model:
-- **Pricing** (input/output per million tokens)
-- **Context window** and **max output tokens**
-- **Supported API endpoints** (chat completions, responses, assistants, batch, fine-tuning, etc.)
-- **Input/output modalities** (text, image, audio, video)
-- **Knowledge cutoff date**
-- **Model versions** with deprecation status
+**Live JSON:** [brandon-fryslie.github.io/ai-providers-and-models/models.json](https://brandon-fryslie.github.io/ai-providers-and-models/models.json)
 
 ## Usage
 
-### JSON (recommended)
-
-Fetch the latest data directly — no dependencies needed:
+Fetch the JSON directly; no package needed:
 
 ```
 https://brandon-fryslie.github.io/ai-providers-and-models/models.json
 ```
 
-### YAML
-
-The raw [`models.yaml`](./models.yaml) file is also available:
+The same data as YAML is the source file, [`models.yaml`](./models.yaml):
 
 ```
 https://raw.githubusercontent.com/brandon-fryslie/ai-providers-and-models/main/models.yaml
 ```
 
-### Node.js / Python SDKs
+The data's shape is defined by [`modules/models-schema.yaml`](./modules/models-schema.yaml).
 
-This repo includes Node.js and Python packages from the original project. See [modules/node/README.md](./modules/node/README.md) and [modules/python/README.md](./modules/python/README.md).
+## What's in the data
 
-## How it works
+| Provider key | Covers | Source |
+|---|---|---|
+| `openai` | GPT and o-series models | `/v1/models` API, plus each model's page on `developers.openai.com` |
+| `gemini` | Gemini models | Gemini API, plus the Gemini pricing page |
+| `gemini_openai` | The same Gemini models, for Gemini's OpenAI-compatible endpoint | Shared with `gemini` |
+| `claude` | Claude models | Anthropic's models docs page |
 
-A [GitHub Action](./.github/workflows/update-openai-models.yml) runs daily at 9am UTC:
+Which models are listed follows the providers: a new model appears the day after its provider publishes it. See `models.json` for the current list rather than this README.
 
-1. **OpenAI** — queries the `/v1/models` API for the model list, then scrapes each model's docs page at `developers.openai.com` for pricing, context windows, endpoint support, and modalities
-2. **Gemini** — queries the Gemini API (`v1beta/models`) for model IDs, context windows, and output limits, then scrapes the pricing page for costs
-3. **Anthropic** — scrapes the Claude models docs page for everything (no API key needed)
-4. Updates `models.yaml`, commits to main, converts to JSON, and deploys to GitHub Pages
+For each model:
+- Pricing (input / output, USD per million tokens)
+- Context window and max output tokens
+- Supported API endpoints (chat completions, responses, batch, fine-tuning, etc.)
+- Input and output modalities (text, image, audio, video)
+- Knowledge cutoff
+- Dated versions, with deprecation status
+
+## How it updates
+
+[A GitHub Action](./.github/workflows/update-openai-models.yml) runs daily at 09:00 UTC. It runs one update script per provider (`scripts/update_*_models.py`), validates `models.yaml` against the schema, commits the change to `main`, and publishes `models.json` to GitHub Pages.
+
+Providers change their pages without notice, so failures are contained:
+- If one model can't be read, it keeps its previous entry and the rest of its provider still updates.
+- If a provider fails entirely, its section is left as it was and the other providers still update.
+- If the result fails schema validation, nothing is committed or published.
+
+In each case the run is marked failed and names what broke, so the data is never silently stale. Check the [Actions tab](https://github.com/brandon-fryslie/ai-providers-and-models/actions) to see when each provider last updated cleanly.
+
+## Running the updates locally
+
+```bash
+pip install -r scripts/requirements.txt
+OPENAI_API_KEY=... python scripts/update_openai_models.py --dry-run
+GEMINI_API_KEY=... python scripts/update_gemini_models.py --dry-run
+python scripts/update_anthropic_models.py --dry-run   # no key needed
+```
+
+`--dry-run` prints the updated YAML instead of writing `models.yaml`.
 
 ## Credits
 
